@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Web</title>
+</head>
+<body>
+    <h1>Create Account</h1>
+
+    <form th:action="@{/index}" th:object="${user}" method="post" >
+        <input type="text" th:field="*{username}" placeholder="Username...">
+        <input type="password" th:field="*{password}" placeholder="Password...">
+        <input type="submit" value="Submit">
+    </form>
+
+    <div th:if="${message}">
+        <p th:text="${message}"></p>
+    </div>
+</body>
+</html>
